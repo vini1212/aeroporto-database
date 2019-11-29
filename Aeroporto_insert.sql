@@ -16,7 +16,7 @@ insert into voo values
 	(0142),
 	(3054);
 
-insert into companhia_aerea values
+insert into companhiaaerea values
 	('12345678', 'LATAM', '321165432', '98724542', 'latam@gmail.com'),
 	('35435435', 'Azul', '321335013', '31243655', 'azul@gmail.com'),
 	('39334535', 'GOL', '968636344', '99886563', 'gol@gmail.com'),
@@ -29,7 +29,7 @@ insert into aviao values
 	(13245, 'Boing 737', 150, 0142),
 	(45321, 'Airbus 787', 300, 3054);
 
-insert into funcionarios values
+insert into funcionario values
 	(005, 'Anita', 'T', 'Hall', '987654321123', 'Português', 'F', 'Piloto', '39334535'),
 	(132, 'Janice', 'A', 'Rodriguez', '135525113314', 'Espanhol', 'F', 'Comissária', '39334535'),
 	(023, 'Charles', 'F', 'Corona', '357946351236', 'Português', 'M', 'Piloto', '12345678'),
@@ -52,12 +52,12 @@ insert into comissario values
 	(897635, 785);
 
 insert into passageiro values
-	('Terrence', 'D', 'Sheehan', '12345678-XX', 29, 0260),
-	('John', 'S', 'Corn', '32156541-BR', 55, 0260),
-	('Mildred', 'D', 'Shute', '26423469-AR', 37, 0260),
-	('Jerry', 'S', 'McGuire', '13543713-US', 61, 1251),
-	('Daniel', 'M', 'Cowans', '39548437-BR', 79, 0142),
-	('Mary', 'K', 'Riley', '54764631-EU', 75, 3054);	
+	(532996, 'Terrence', 'D', 'Sheehan', '12345678-XX', 29, 0260),
+	(241030, 'John', 'S', 'Corn', '32156541-BR', 55, 0260),
+	(204603, 'Mildred', 'D', 'Shute', '26423469-AR', 37, 0260),
+	(369012, 'Jerry', 'S', 'McGuire', '13543713-US', 61, 1251),
+	(130341, 'Daniel', 'M', 'Cowans', '39548437-BR', 79, 0142),
+	(003164, 'Mary', 'K', 'Riley', '54764631-EU', 75, 3054);	
 
 insert into trecho values 
 	(1234, 0260, 54654, 183462, 301412),
