@@ -10,13 +10,19 @@ public class Trecho implements Serializable{
 	private Integer idA; //idAviao
 	private Integer idP; //idPassageiro
 	private Integer idC; //idComissario
+	private String idAero;
 	
-	public Trecho(Integer idTrecho, Integer nVoo, Integer idA, Integer idP, Integer idC) {
+	public Trecho() {
+		
+	}
+	
+	public Trecho(Integer idTrecho, Integer nVoo, Integer idA, Integer idP, Integer idC, String idAero) {
 		this.idTrecho = idTrecho;
 		this.nVoo = nVoo;
 		this.idA = idA;
 		this.idP = idP;
 		this.idC = idC;
+		this.idAero = idAero;
 	}
 
 	public Integer getIdTrecho() {
@@ -59,11 +65,20 @@ public class Trecho implements Serializable{
 		this.idC = idC;
 	}
 
+	public String getIdAero() {
+		return idAero;
+	}
+
+	public void setIdAero(String idAero) {
+		this.idAero = idAero;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((idA == null) ? 0 : idA.hashCode());
+		result = prime * result + ((idAero == null) ? 0 : idAero.hashCode());
 		result = prime * result + ((idC == null) ? 0 : idC.hashCode());
 		result = prime * result + ((idP == null) ? 0 : idP.hashCode());
 		result = prime * result + ((idTrecho == null) ? 0 : idTrecho.hashCode());
@@ -84,6 +99,11 @@ public class Trecho implements Serializable{
 			if (other.idA != null)
 				return false;
 		} else if (!idA.equals(other.idA))
+			return false;
+		if (idAero == null) {
+			if (other.idAero != null)
+				return false;
+		} else if (!idAero.equals(other.idAero))
 			return false;
 		if (idC == null) {
 			if (other.idC != null)
@@ -111,7 +131,6 @@ public class Trecho implements Serializable{
 	@Override
 	public String toString() {
 		return "Trecho [idTrecho=" + idTrecho + ", nVoo=" + nVoo + ", idA=" + idA + ", idP=" + idP + ", idC=" + idC
-				+ "]";
+				+ ", idAero=" + idAero + "]";
 	}
-	
 }

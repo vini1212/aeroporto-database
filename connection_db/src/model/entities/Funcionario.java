@@ -179,8 +179,7 @@ public class Funcionario implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Funcionario [idFuncionario=" + idFuncionario + ", pNome=" + pNome + ", mNome=" + mNome + ", sNome="
-				+ sNome + ", documento=" + documento + ", sexo=" + sexo + ", tipo=" + tipo + ", idioma=" + idioma
-				+ ", companhia=" + companhia + "]";
-	}	
+		return "Funcionario -> IdFuncionario: " + idFuncionario + " - PrimeiroNome: " + pNome + " - NomeMeio: " + mNome + " - Sobrenome: " + sNome + " - Documento: "
+				+ documento + " - Idioma: " + idioma + " - Sexo: " + sexo + " - Tipo: " + tipo + " - idCompanhia: " + getCompanhia().getIdCompanhia() + " - Nome Companhia: " + getCompanhia().getNomeCompanhia();
+	}		
 }

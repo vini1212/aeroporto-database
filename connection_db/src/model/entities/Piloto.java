@@ -84,9 +84,9 @@ public class Piloto extends Funcionario implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Piloto [idPiloto=" + idPiloto + ", horas=" + horas + ", idFunc=" + idFunc + "]";
+		return "Piloto -> IdPiloto: " + idPiloto + " / HorasVoo: " + horas + " / idFuncionario: " + getIdFuncionario() + " / PrimeiroNome: " +
+				getpNome() + " / NomeMeio: " + getmNome() + " / Sobrenome: " + getsNome() + " / Documento: " + getDocumento() + " / Idioma: " + getIdioma() +
+				" / Sexo: " + getSexo() + " / Tipo: " + getTipo() + " / Companhia: " + getCompanhia().getIdCompanhia();
 	}
-	
-	
 	
 }

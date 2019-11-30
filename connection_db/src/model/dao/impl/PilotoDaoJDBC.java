@@ -1,9 +1,19 @@
 package model.dao.impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import db.DB;
+import db.DbException;
 import model.dao.PilotoDao;
+import model.entities.CompanhiaAerea;
 import model.entities.Piloto;
 
 public class PilotoDaoJDBC implements PilotoDao{
@@ -15,35 +25,148 @@ public class PilotoDaoJDBC implements PilotoDao{
 
 	@Override
 	public void insert(Piloto obj) {
-		// TODO Auto-generated method stub
+		PreparedStatement st = null;
+		PreparedStatement st1 = null;
 		
-	}
-
-	@Override
-	public void update(Piloto obj) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
-		
+		try {
+			st = conn.prepareStatement(
+					"insert into funcionario "
+					+ "values "
+					+ "(?, ?, ?, ?, ?, ?, ?, ?, ?)",									
+					Statement.RETURN_GENERATED_KEYS);
+			
+			st.setInt(1, obj.getIdFuncionario());
+			st.setString(2, obj.getpNome());
+			st.setString(3, obj.getmNome());
+			st.setString(4, obj.getsNome());
+			st.setString(5, obj.getDocumento());
+			st.setString(6, obj.getIdioma());
+			st.setString(7, obj.getSexo());
+			st.setString(8, obj.getTipo());
+			st.setString(9, obj.getCompanhia().getIdCompanhia());
+			
+			st1 = conn.prepareStatement( 
+					"insert into piloto "
+					+ "values "
+					+ "(?, ?, ?)",
+					Statement.RETURN_GENERATED_KEYS);
+			
+			st1.setInt(1, obj.getIdPiloto());
+			st1.setInt(2, obj.getHoras());
+			st1.setInt(3, obj.getIdFunc());
+			
+			int rowsAffected = st.executeUpdate();
+			int rowsAffected1 = st1.executeUpdate();
+			
+			if(rowsAffected > 0 && rowsAffected1 > 0) {
+				ResultSet rs = st.getGeneratedKeys();
+				if(rs.next()) {
+					int id = rs.getInt(1);
+					obj.setIdPiloto(id);
+				}
+				DB.closeResultSet(rs);
+			}
+			else {
+				throw new DbException("Unexpected error! No rows affected!");
+			}
+		}catch(SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+		finally {
+			DB.closeStatement(st);
+			DB.closeStatement(st1);
+		}
 	}
 
 	@Override
 	public Piloto findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		try {
+			st = conn.prepareStatement(
+					"select piloto.IDPILOTO, piloto.HORASVOO, funcionario.* "
+					+ "from piloto inner join funcionario "
+					+ "on piloto.IDFUNC = funcionario.IDFUNCIONARIO "
+					+ "where IDPILOTO = ?");
+			
+			st.setInt(1, id);
+			rs = st.executeQuery();
+			
+			if(rs.next()) {
+				CompanhiaAerea comp = instantiateCompanhia(rs);
+				Piloto obj = instantiatePiloto(rs, comp);
+				return obj;
+			}
+			return null;
+		}
+		catch (SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+		finally {
+			DB.closeResultSet(rs);
+			DB.closeStatement(st);
+		}
+	}
+	
+	private Piloto instantiatePiloto(ResultSet rs, CompanhiaAerea comp) throws SQLException{
+		Piloto obj = new Piloto();
+		obj.setIdPiloto(rs.getInt("IDPILOTO"));
+		obj.setHoras(rs.getInt("HORASVOO"));
+		obj.setIdFuncionario(rs.getInt("IDFUNCIONARIO"));
+		obj.setpNome(rs.getString("PNOME"));
+		obj.setmNome(rs.getString("MNOME"));
+		obj.setsNome(rs.getString("SNOME"));
+		obj.setDocumento(rs.getString("DOCUMENTO"));
+		obj.setIdioma(rs.getString("IDIOMA"));
+		obj.setSexo(rs.getString("SEXO"));
+		obj.setTipo(rs.getString("TIPO"));
+		obj.setCompanhia(comp);
+		return obj;
+	}
+	
+	private CompanhiaAerea instantiateCompanhia(ResultSet rs) throws SQLException{
+		CompanhiaAerea comp = new CompanhiaAerea();
+		comp.setIdCompanhia(rs.getString("COMPANHIA"));
+		return comp;
 	}
 
 	@Override
 	public List<Piloto> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		try {
+			st = conn.prepareStatement(
+					"select piloto.IDPILOTO, piloto.HORASVOO, funcionario.* "
+					+ "from piloto inner join funcionario "
+					+ "on piloto.IDFUNC = funcionario.IDFUNCIONARIO "
+					+ "order by PNOME");
+			
+			rs = st.executeQuery();
+			
+			List<Piloto> list = new ArrayList<>();
+			Map<String, CompanhiaAerea>  map = new HashMap<>();
+			
+			while(rs.next()) {
+				CompanhiaAerea comp = map.get(rs.getString("COMPANHIA"));
+				
+				if(comp == null) {
+					comp = instantiateCompanhia(rs);
+					map.put(rs.getString("COMPANHIA"), comp);
+				}
+				
+				Piloto obj = instantiatePiloto(rs, comp);
+				list.add(obj);
+			}
+			return list;
+		}
+		catch (SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+		finally {
+			DB.closeResultSet(rs);
+			DB.closeStatement(st);
+		}
 	}
-	
-	
-	
-	
 }

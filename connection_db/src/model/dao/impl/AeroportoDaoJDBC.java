@@ -117,7 +117,7 @@ public class AeroportoDaoJDBC implements AeroportoDao{
 			if(rs.next()) {
 				Aeroporto obj = new Aeroporto();
 				obj.setId(rs.getString("IDAEROPORTO"));
-				obj.setNomeCidade(rs.getString("NOMECIDADE"));
+				obj.setNomeCidade(rs.getString("NOMEAEROPORTO"));
 				return obj;
 			}
 		return null;
@@ -140,7 +140,7 @@ public class AeroportoDaoJDBC implements AeroportoDao{
 		
 		try {
 			st = conn.prepareStatement(
-					"SELECT * FROM aeroporto ORDER BY NOMEAEROPORTO"
+					"select * from aeroporto order by NOMEAEROPORTO"
 					);
 			
 			rs = st.executeQuery();

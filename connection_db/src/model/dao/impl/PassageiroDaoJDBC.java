@@ -121,7 +121,7 @@ public class PassageiroDaoJDBC implements PassageiroDao{
 		try {
 			st = conn.prepareStatement(
 					"select passageiro.*, voo.NUMERO as VooPassageiro"
-					+ "from passageiro inner join voo\r\n" 
+					+ "from passageiro inner join voo " 
 					+ "on passageiro.NVOOP = voo.NUMERO" 
 					+ "where IDPASSAGEIRO = ?");
 			

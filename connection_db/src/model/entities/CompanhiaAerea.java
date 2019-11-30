@@ -118,7 +118,6 @@ public class CompanhiaAerea implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Companhia_Aerea [idCompanhia=" + idCompanhia + ", nomeCompanhia=" + nomeCompanhia + ", cNPJ=" + cNPJ
-				+ ", telefone=" + telefone + ", email=" + email + "]";
+		return "Companhia_Aerea -> IdCompanhia: " + idCompanhia + " - NomeCompanhia: " + nomeCompanhia + " - CNPJ: " + cNPJ + " - Telefone: " + telefone + " - Email: " + email;
 	}	
 }

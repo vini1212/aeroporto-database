@@ -65,10 +65,13 @@ public class Comissario extends Funcionario implements Serializable{
 			return false;
 		return true;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Comissario [idComissario=" + idComissario + ", idFunc=" + idFunc + "]";
+		return "Comissario ->  PrimeiroNome: " + getpNome() + ", MeioNome: " + getmNome() + ", Sobrenome: " + getsNome() + ", Documento: " + getDocumento()
+		+ ", Idioma: " + getIdioma() + ", Sexo: " + getSexo() + ", Tipo: " + getTipo() + ", Companhia: " + getCompanhia().getIdCompanhia() + ", IdFuncionario: " + getIdFuncionario() + ", IdComissario: " 
+		+ idComissario;
 	}
+	
 	
 }
