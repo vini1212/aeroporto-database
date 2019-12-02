@@ -1,5 +1,6 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,7 +14,9 @@ import model.dao.FuncionarioDao;
 import model.dao.PassageiroDao;
 import model.dao.PilotoDao;
 import model.dao.TrechoDao;
-import model.entities.CompanhiaAerea;
+import model.dao.VooDao;
+import model.entities.Passageiro;
+import model.entities.Voo;
 
 public class Program {
 
@@ -28,15 +31,16 @@ public class Program {
 		PassageiroDao passageiroDao = DaoFactory.createPassageiroDao();
 		PilotoDao pilotoDao = DaoFactory.createPilotoDao();
 		TrechoDao trechoDao = DaoFactory.createTrechoDao();
+		VooDao vooDao = DaoFactory.createVooDao();
 	
 //		System.out.println("=== TESTE1: aeroporto findAll ===");
-//		
+		
 //		List<Aeroporto> list = aeroportoDao.findAll();
 //		
 //		for(Aeroporto obj : list) {
 //			System.out.println(obj);
 //		}
-		
+//		
 		
 
 //		List<Cidade> list = cidadeDao.findAll();
@@ -69,7 +73,7 @@ public class Program {
 //			System.out.println(obj);
 //		}
 			
-//		Comissario newComissario = new Comissario(879, "Vinicius", "R", "Geraldo", "654987321654", "M" , "Comissário", "Português", "01384130", 756821, 879);
+//		Comissario newComissario = new Comissario(879, "Vinicius", "R", "Geraldo", "654987321654", "M" , "Comissï¿½rio", "Portuguï¿½s", "01384130", 756821, 879);
 //		comissarioDao.insert(newComissario);
 //		System.out.println("Inserido! Novo id = " + newComissario.getIdFuncionario());
 		
@@ -78,7 +82,7 @@ public class Program {
 
 /* INSERE UM NOVO FUNCIONARIO NO BANCO
  * 
- * 		Funcionario newFuncionario = new Funcionario(699, "Alex", "F", "Marston", "123456789987", "M", "Comissário", "Português", "01384130");
+ * 		Funcionario newFuncionario = new Funcionario(699, "Alex", "F", "Marston", "123456789987", "M", "Comissï¿½rio", "Portuguï¿½s", "01384130");
 				funcionarioDao.insert(newFuncionario);
 */
 		
@@ -94,9 +98,13 @@ public class Program {
 //		Funcionario funcionario = funcionarioDao.findById(132);
 //		System.out.println(funcionario);
 //		
+//		
 		
-		
-		
+		List<Voo> list = vooDao.findAll();
+		for(Voo obj : list) {
+			System.out.println(obj);
+		}
+	
 		sc.close();
 	}
 

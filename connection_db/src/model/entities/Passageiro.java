@@ -147,7 +147,7 @@ public class Passageiro implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Passageiro [idPassageiro=" + idPassageiro + ", pNome=" + pNome + ", mNome=" + mNome + ", sNome=" + sNome
-				+ ", idade=" + idade + ", passaporte=" + passaporte + ", nVooPassageiro=" + nVooPassageiro + "]";
+		return "Passageiro -> idPassageiro: " + idPassageiro + " - PrimeiroNome: " + pNome + " - NomeMeio: " + mNome + " - Sobrenome: " +
+                        sNome + " - Idade: " + idade + " - Passaporte: " + passaporte + " - NumeroVooPassageiro: " + getnVooPassageiro().getNumero();
 	}
 }

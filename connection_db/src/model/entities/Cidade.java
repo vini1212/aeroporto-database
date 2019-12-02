@@ -83,7 +83,7 @@ public class Cidade implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Cidade [idCidade=" + idCidade + ", pais=" + pais + ", nomeCidade=" + nomeCidade + "]";
+		return "Cidade -> idCidade: " + idCidade + " - Pais: " + pais + " - NomeCidade: " + nomeCidade;
 	}
 	
 }

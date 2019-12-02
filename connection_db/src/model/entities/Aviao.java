@@ -98,8 +98,7 @@ public class Aviao implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Aviao [idAviao=" + idAviao + ", tipoAviao=" + tipoAviao + ", numeroAssentos=" + numeroAssentos
-				+ ", numeroVoo=" + numeroVoo + "]";
+		return "Aviao -> idAviao: " + idAviao + " - TipoAviao: " + tipoAviao + " - NumeroAssentos: " + numeroAssentos + " - NumeroVoo: " + numeroVoo;
 	}
 
 	

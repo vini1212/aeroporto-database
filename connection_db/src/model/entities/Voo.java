@@ -50,7 +50,7 @@ public class Voo implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Voo [numero=" + numero + "]";
+		return "Voo -> Numero: " + numero;
 	}
 	
 	

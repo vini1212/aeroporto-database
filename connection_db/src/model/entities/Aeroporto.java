@@ -66,6 +66,6 @@ public class Aeroporto implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Aeroporto [id=" + id + ", nomeCidade=" + nomeCidade + "]";
+		return "Aeroporto -> IdAeroporto: " + id + " - NomeAeroporto: " + nomeCidade; 
 	}
 }
