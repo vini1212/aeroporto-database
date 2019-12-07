@@ -7,7 +7,6 @@ package application;
 
 import java.util.List;
 import java.util.Scanner;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.dao.*;
@@ -249,6 +248,46 @@ public class App extends javax.swing.JFrame {
         altHorasTextPil = new javax.swing.JTextField();
         altIdFTextPil = new javax.swing.JTextField();
         altPil_altButton = new javax.swing.JButton();
+        exbAero_frame = new javax.swing.JFrame();
+        exbAero_Panel = new javax.swing.JPanel();
+        exbAero_Scrool = new javax.swing.JScrollPane();
+        exbAero_table = new javax.swing.JTable();
+        exbAviao_frame = new javax.swing.JFrame();
+        exbAviao_Panel = new javax.swing.JPanel();
+        exbAviao_Scrool = new javax.swing.JScrollPane();
+        exbAviao_table = new javax.swing.JTable();
+        exbCidade_frame = new javax.swing.JFrame();
+        exbCidade_Panel = new javax.swing.JPanel();
+        exbCidade_Scrool = new javax.swing.JScrollPane();
+        exbCidade_table = new javax.swing.JTable();
+        exbCompanhiaAerea_frame = new javax.swing.JFrame();
+        exbCompanhiaAerea_Panel = new javax.swing.JPanel();
+        exbCompanhiaAerea_Scrool = new javax.swing.JScrollPane();
+        exbCompanhiaAerea_table = new javax.swing.JTable();
+        exbComissario_frame = new javax.swing.JFrame();
+        exbComissario_Panel = new javax.swing.JPanel();
+        exbComissario_Scrool = new javax.swing.JScrollPane();
+        exbComissario_table = new javax.swing.JTable();
+        exbPiloto_frame = new javax.swing.JFrame();
+        exbPiloto_Panel = new javax.swing.JPanel();
+        exbPiloto_Scrool = new javax.swing.JScrollPane();
+        exbPiloto_table = new javax.swing.JTable();
+        exbFunc_frame = new javax.swing.JFrame();
+        exbFunc_Panel = new javax.swing.JPanel();
+        exbFunc_Scrool = new javax.swing.JScrollPane();
+        exbFunc_table = new javax.swing.JTable();
+        exbPas_frame = new javax.swing.JFrame();
+        exbPas_Panel = new javax.swing.JPanel();
+        exbPas_Scrool = new javax.swing.JScrollPane();
+        exbPas_table = new javax.swing.JTable();
+        exbTrecho_frame = new javax.swing.JFrame();
+        exbTrecho_Panel = new javax.swing.JPanel();
+        exbTrecho_Scrool = new javax.swing.JScrollPane();
+        exbTrecho_table = new javax.swing.JTable();
+        exbVoo_frame = new javax.swing.JFrame();
+        exbVoo_Panel = new javax.swing.JPanel();
+        exbVoo_Scrool = new javax.swing.JScrollPane();
+        exbVoo_table = new javax.swing.JTable();
         menuPanel = new javax.swing.JTabbedPane();
         Inicio = new javax.swing.JPanel();
         showIcon = new javax.swing.JLabel();
@@ -292,6 +331,18 @@ public class App extends javax.swing.JFrame {
         delVoo_button = new javax.swing.JButton();
         delScroll = new javax.swing.JScrollPane();
         delTable = new javax.swing.JTable();
+        Exibir = new javax.swing.JPanel();
+        exibirLabel = new javax.swing.JLabel();
+        exibirAero_button = new javax.swing.JButton();
+        exibirAvi_button = new javax.swing.JButton();
+        exibirCid_button = new javax.swing.JButton();
+        exibirCom_button = new javax.swing.JButton();
+        exibirComp_button = new javax.swing.JButton();
+        exibirFun_button = new javax.swing.JButton();
+        exibirPas_button = new javax.swing.JButton();
+        exibirPil_button = new javax.swing.JButton();
+        exibirTre_button = new javax.swing.JButton();
+        exibirVoo_button = new javax.swing.JButton();
 
         cadAero_frame.setMinimumSize(new java.awt.Dimension(300, 200));
         cadAero_frame.setName("cadAero_frame"); // NOI18N
@@ -1985,7 +2036,7 @@ public class App extends javax.swing.JFrame {
                 .addGroup(altPas_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(altPas_voo)
                     .addComponent(altVooTextPas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(altPas_altbutton)
                 .addContainerGap())
         );
@@ -2100,8 +2151,639 @@ public class App extends javax.swing.JFrame {
                     .addGap(0, 30, Short.MAX_VALUE)))
         );
 
+        exbAero_frame.setLocationByPlatform(true);
+        exbAero_frame.setMaximumSize(new java.awt.Dimension(500, 200));
+        exbAero_frame.setMinimumSize(new java.awt.Dimension(500, 200));
+        exbAero_frame.setPreferredSize(new java.awt.Dimension(500, 200));
+        exbAero_frame.setResizable(false);
+
+        exbAero_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "IDAeroporto", "NomeCidade"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        exbAero_Scrool.setViewportView(exbAero_table);
+
+        javax.swing.GroupLayout exbAero_PanelLayout = new javax.swing.GroupLayout(exbAero_Panel);
+        exbAero_Panel.setLayout(exbAero_PanelLayout);
+        exbAero_PanelLayout.setHorizontalGroup(
+            exbAero_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbAero_PanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(exbAero_Scrool, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        exbAero_PanelLayout.setVerticalGroup(
+            exbAero_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbAero_PanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exbAero_Scrool, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout exbAero_frameLayout = new javax.swing.GroupLayout(exbAero_frame.getContentPane());
+        exbAero_frame.getContentPane().setLayout(exbAero_frameLayout);
+        exbAero_frameLayout.setHorizontalGroup(
+            exbAero_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exbAero_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        exbAero_frameLayout.setVerticalGroup(
+            exbAero_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbAero_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbAero_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+
+        exbAviao_frame.setMinimumSize(new java.awt.Dimension(600, 250));
+
+        exbAviao_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "IDAviao", "TipoAviao", "NumeroAssentos", "NumeroVoo"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        exbAviao_Scrool.setViewportView(exbAviao_table);
+        if (exbAviao_table.getColumnModel().getColumnCount() > 0) {
+            exbAviao_table.getColumnModel().getColumn(3).setHeaderValue("NumeroVoo");
+        }
+
+        javax.swing.GroupLayout exbAviao_PanelLayout = new javax.swing.GroupLayout(exbAviao_Panel);
+        exbAviao_Panel.setLayout(exbAviao_PanelLayout);
+        exbAviao_PanelLayout.setHorizontalGroup(
+            exbAviao_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbAviao_PanelLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(exbAviao_Scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        exbAviao_PanelLayout.setVerticalGroup(
+            exbAviao_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbAviao_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbAviao_Scrool, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout exbAviao_frameLayout = new javax.swing.GroupLayout(exbAviao_frame.getContentPane());
+        exbAviao_frame.getContentPane().setLayout(exbAviao_frameLayout);
+        exbAviao_frameLayout.setHorizontalGroup(
+            exbAviao_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exbAviao_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        exbAviao_frameLayout.setVerticalGroup(
+            exbAviao_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbAviao_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbAviao_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        exbCidade_frame.setMinimumSize(new java.awt.Dimension(600, 250));
+        exbCidade_frame.setResizable(false);
+
+        exbCidade_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "IDCidade", "Pais", "NomeCidade"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        exbCidade_table.setAlignmentX(1.0F);
+        exbCidade_table.setAlignmentY(1.0F);
+        exbCidade_Scrool.setViewportView(exbCidade_table);
+        if (exbCidade_table.getColumnModel().getColumnCount() > 0) {
+            exbCidade_table.getColumnModel().getColumn(0).setHeaderValue("IDCidade");
+            exbCidade_table.getColumnModel().getColumn(1).setHeaderValue("Pais");
+        }
+
+        javax.swing.GroupLayout exbCidade_PanelLayout = new javax.swing.GroupLayout(exbCidade_Panel);
+        exbCidade_Panel.setLayout(exbCidade_PanelLayout);
+        exbCidade_PanelLayout.setHorizontalGroup(
+            exbCidade_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbCidade_PanelLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(exbCidade_Scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
+                .addGap(21, 21, 21))
+        );
+        exbCidade_PanelLayout.setVerticalGroup(
+            exbCidade_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exbCidade_PanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exbCidade_Scrool, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout exbCidade_frameLayout = new javax.swing.GroupLayout(exbCidade_frame.getContentPane());
+        exbCidade_frame.getContentPane().setLayout(exbCidade_frameLayout);
+        exbCidade_frameLayout.setHorizontalGroup(
+            exbCidade_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exbCidade_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        exbCidade_frameLayout.setVerticalGroup(
+            exbCidade_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbCidade_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbCidade_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        exbCompanhiaAerea_frame.setMinimumSize(new java.awt.Dimension(600, 250));
+        exbCompanhiaAerea_frame.setResizable(false);
+
+        exbCompanhiaAerea_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "IDCompanhiaAerea", "NomeCompanhia", "CNPJ", "Telefone", "Email"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        exbCompanhiaAerea_table.setAlignmentX(1.0F);
+        exbCompanhiaAerea_table.setAlignmentY(1.0F);
+        exbCompanhiaAerea_Scrool.setViewportView(exbCompanhiaAerea_table);
+        if (exbCompanhiaAerea_table.getColumnModel().getColumnCount() > 0) {
+            exbCompanhiaAerea_table.getColumnModel().getColumn(0).setHeaderValue("AeroportoDestino");
+        }
+
+        javax.swing.GroupLayout exbCompanhiaAerea_PanelLayout = new javax.swing.GroupLayout(exbCompanhiaAerea_Panel);
+        exbCompanhiaAerea_Panel.setLayout(exbCompanhiaAerea_PanelLayout);
+        exbCompanhiaAerea_PanelLayout.setHorizontalGroup(
+            exbCompanhiaAerea_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbCompanhiaAerea_PanelLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(exbCompanhiaAerea_Scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
+                .addGap(21, 21, 21))
+        );
+        exbCompanhiaAerea_PanelLayout.setVerticalGroup(
+            exbCompanhiaAerea_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exbCompanhiaAerea_PanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exbCompanhiaAerea_Scrool, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout exbCompanhiaAerea_frameLayout = new javax.swing.GroupLayout(exbCompanhiaAerea_frame.getContentPane());
+        exbCompanhiaAerea_frame.getContentPane().setLayout(exbCompanhiaAerea_frameLayout);
+        exbCompanhiaAerea_frameLayout.setHorizontalGroup(
+            exbCompanhiaAerea_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exbCompanhiaAerea_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        exbCompanhiaAerea_frameLayout.setVerticalGroup(
+            exbCompanhiaAerea_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbCompanhiaAerea_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbCompanhiaAerea_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        exbComissario_frame.setMaximumSize(new java.awt.Dimension(1113, 250));
+        exbComissario_frame.setMinimumSize(new java.awt.Dimension(1113, 250));
+        exbComissario_frame.setPreferredSize(new java.awt.Dimension(1113, 250));
+        exbComissario_frame.setResizable(false);
+
+        exbComissario_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "IDComissario", "IDFuncionario", "Nome", "NomeMeio", "Sobrenome", "Documento", "Idioma", "Sexo", "Tipo", "Companhia"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        exbComissario_table.setAlignmentX(1.0F);
+        exbComissario_table.setAlignmentY(1.0F);
+        exbComissario_Scrool.setViewportView(exbComissario_table);
+        if (exbComissario_table.getColumnModel().getColumnCount() > 0) {
+            exbComissario_table.getColumnModel().getColumn(1).setHeaderValue("IDFuncionario");
+            exbComissario_table.getColumnModel().getColumn(8).setHeaderValue("Tipo");
+            exbComissario_table.getColumnModel().getColumn(9).setHeaderValue("Companhia");
+        }
+
+        javax.swing.GroupLayout exbComissario_PanelLayout = new javax.swing.GroupLayout(exbComissario_Panel);
+        exbComissario_Panel.setLayout(exbComissario_PanelLayout);
+        exbComissario_PanelLayout.setHorizontalGroup(
+            exbComissario_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbComissario_PanelLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(exbComissario_Scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 1046, Short.MAX_VALUE)
+                .addGap(21, 21, 21))
+        );
+        exbComissario_PanelLayout.setVerticalGroup(
+            exbComissario_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exbComissario_PanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exbComissario_Scrool, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout exbComissario_frameLayout = new javax.swing.GroupLayout(exbComissario_frame.getContentPane());
+        exbComissario_frame.getContentPane().setLayout(exbComissario_frameLayout);
+        exbComissario_frameLayout.setHorizontalGroup(
+            exbComissario_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbComissario_frameLayout.createSequentialGroup()
+                .addComponent(exbComissario_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        exbComissario_frameLayout.setVerticalGroup(
+            exbComissario_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbComissario_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbComissario_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        exbPiloto_frame.setMaximumSize(new java.awt.Dimension(1113, 250));
+        exbPiloto_frame.setMinimumSize(new java.awt.Dimension(1113, 250));
+        exbPiloto_frame.setPreferredSize(new java.awt.Dimension(1113, 250));
+        exbPiloto_frame.setResizable(false);
+
+        exbPiloto_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "IDPiloto", "HorasVoo", "IDFuncionario", "Nome", "NomeMeio", "Sobrenome", "Documento", "Idioma", "Sexo", "Tipo", "Companhia"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        exbPiloto_table.setAlignmentX(1.0F);
+        exbPiloto_table.setAlignmentY(1.0F);
+        exbPiloto_Scrool.setViewportView(exbPiloto_table);
+        if (exbPiloto_table.getColumnModel().getColumnCount() > 0) {
+            exbPiloto_table.getColumnModel().getColumn(1).setHeaderValue("HorasVoo");
+            exbPiloto_table.getColumnModel().getColumn(2).setHeaderValue("IDFuncionario");
+            exbPiloto_table.getColumnModel().getColumn(9).setHeaderValue("Tipo");
+            exbPiloto_table.getColumnModel().getColumn(10).setHeaderValue("Companhia");
+        }
+
+        javax.swing.GroupLayout exbPiloto_PanelLayout = new javax.swing.GroupLayout(exbPiloto_Panel);
+        exbPiloto_Panel.setLayout(exbPiloto_PanelLayout);
+        exbPiloto_PanelLayout.setHorizontalGroup(
+            exbPiloto_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbPiloto_PanelLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(exbPiloto_Scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 1034, Short.MAX_VALUE)
+                .addGap(29, 29, 29))
+        );
+        exbPiloto_PanelLayout.setVerticalGroup(
+            exbPiloto_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbPiloto_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbPiloto_Scrool, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout exbPiloto_frameLayout = new javax.swing.GroupLayout(exbPiloto_frame.getContentPane());
+        exbPiloto_frame.getContentPane().setLayout(exbPiloto_frameLayout);
+        exbPiloto_frameLayout.setHorizontalGroup(
+            exbPiloto_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbPiloto_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbPiloto_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        exbPiloto_frameLayout.setVerticalGroup(
+            exbPiloto_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbPiloto_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbPiloto_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        exbFunc_frame.setMaximumSize(new java.awt.Dimension(1113, 250));
+        exbFunc_frame.setMinimumSize(new java.awt.Dimension(1113, 250));
+        exbFunc_frame.setPreferredSize(new java.awt.Dimension(1113, 250));
+        exbFunc_frame.setResizable(false);
+
+        exbFunc_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "IDFuncionario", "Nome", "NomeMeio", "Sobrenome", "Documento", "Idioma", "Sexo", "Tipo", "Companhia", "NomeCompanhia"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        exbFunc_table.setAlignmentX(1.0F);
+        exbFunc_table.setAlignmentY(1.0F);
+        exbFunc_Scrool.setViewportView(exbFunc_table);
+        if (exbFunc_table.getColumnModel().getColumnCount() > 0) {
+            exbFunc_table.getColumnModel().getColumn(7).setHeaderValue("Tipo");
+            exbFunc_table.getColumnModel().getColumn(8).setHeaderValue("Companhia");
+            exbFunc_table.getColumnModel().getColumn(9).setHeaderValue("NomeCompanhia");
+        }
+
+        javax.swing.GroupLayout exbFunc_PanelLayout = new javax.swing.GroupLayout(exbFunc_Panel);
+        exbFunc_Panel.setLayout(exbFunc_PanelLayout);
+        exbFunc_PanelLayout.setHorizontalGroup(
+            exbFunc_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbFunc_PanelLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(exbFunc_Scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 1060, Short.MAX_VALUE)
+                .addGap(29, 29, 29))
+        );
+        exbFunc_PanelLayout.setVerticalGroup(
+            exbFunc_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbFunc_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbFunc_Scrool, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout exbFunc_frameLayout = new javax.swing.GroupLayout(exbFunc_frame.getContentPane());
+        exbFunc_frame.getContentPane().setLayout(exbFunc_frameLayout);
+        exbFunc_frameLayout.setHorizontalGroup(
+            exbFunc_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbFunc_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbFunc_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        exbFunc_frameLayout.setVerticalGroup(
+            exbFunc_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbFunc_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbFunc_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        exbPas_frame.setMaximumSize(new java.awt.Dimension(1113, 250));
+        exbPas_frame.setMinimumSize(new java.awt.Dimension(1113, 250));
+        exbPas_frame.setPreferredSize(new java.awt.Dimension(1113, 250));
+        exbPas_frame.setResizable(false);
+
+        exbPas_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "IDPassageiro", "Nome", "NomeMeio", "Sobrenome", "Passaporte", "Idade", "NumeroVooPass"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        exbPas_table.setAlignmentX(1.0F);
+        exbPas_table.setAlignmentY(1.0F);
+        exbPas_Scrool.setViewportView(exbPas_table);
+
+        javax.swing.GroupLayout exbPas_PanelLayout = new javax.swing.GroupLayout(exbPas_Panel);
+        exbPas_Panel.setLayout(exbPas_PanelLayout);
+        exbPas_PanelLayout.setHorizontalGroup(
+            exbPas_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbPas_PanelLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(exbPas_Scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 1060, Short.MAX_VALUE)
+                .addGap(29, 29, 29))
+        );
+        exbPas_PanelLayout.setVerticalGroup(
+            exbPas_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbPas_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbPas_Scrool, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout exbPas_frameLayout = new javax.swing.GroupLayout(exbPas_frame.getContentPane());
+        exbPas_frame.getContentPane().setLayout(exbPas_frameLayout);
+        exbPas_frameLayout.setHorizontalGroup(
+            exbPas_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbPas_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbPas_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        exbPas_frameLayout.setVerticalGroup(
+            exbPas_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbPas_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbPas_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        exbTrecho_frame.setMinimumSize(new java.awt.Dimension(600, 250));
+        exbTrecho_frame.setResizable(false);
+
+        exbTrecho_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "IDTrecho", "NumeroVooTrecho", "IDAviaoAssociado", "IDPilotoAssociado", "IDComissarioAssociado", "IDAeroportoDest"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        exbTrecho_table.setAlignmentX(1.0F);
+        exbTrecho_table.setAlignmentY(1.0F);
+        exbTrecho_Scrool.setViewportView(exbTrecho_table);
+
+        javax.swing.GroupLayout exbTrecho_PanelLayout = new javax.swing.GroupLayout(exbTrecho_Panel);
+        exbTrecho_Panel.setLayout(exbTrecho_PanelLayout);
+        exbTrecho_PanelLayout.setHorizontalGroup(
+            exbTrecho_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbTrecho_PanelLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(exbTrecho_Scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
+                .addGap(21, 21, 21))
+        );
+        exbTrecho_PanelLayout.setVerticalGroup(
+            exbTrecho_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exbTrecho_PanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exbTrecho_Scrool, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout exbTrecho_frameLayout = new javax.swing.GroupLayout(exbTrecho_frame.getContentPane());
+        exbTrecho_frame.getContentPane().setLayout(exbTrecho_frameLayout);
+        exbTrecho_frameLayout.setHorizontalGroup(
+            exbTrecho_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exbTrecho_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        exbTrecho_frameLayout.setVerticalGroup(
+            exbTrecho_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbTrecho_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbTrecho_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        exbVoo_frame.setMinimumSize(new java.awt.Dimension(600, 250));
+        exbVoo_frame.setResizable(false);
+
+        exbVoo_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Numero"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        exbVoo_table.setAlignmentX(1.0F);
+        exbVoo_table.setAlignmentY(1.0F);
+        exbVoo_Scrool.setViewportView(exbVoo_table);
+
+        javax.swing.GroupLayout exbVoo_PanelLayout = new javax.swing.GroupLayout(exbVoo_Panel);
+        exbVoo_Panel.setLayout(exbVoo_PanelLayout);
+        exbVoo_PanelLayout.setHorizontalGroup(
+            exbVoo_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbVoo_PanelLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(exbVoo_Scrool, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
+                .addGap(21, 21, 21))
+        );
+        exbVoo_PanelLayout.setVerticalGroup(
+            exbVoo_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exbVoo_PanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exbVoo_Scrool, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout exbVoo_frameLayout = new javax.swing.GroupLayout(exbVoo_frame.getContentPane());
+        exbVoo_frame.getContentPane().setLayout(exbVoo_frameLayout);
+        exbVoo_frameLayout.setHorizontalGroup(
+            exbVoo_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exbVoo_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        exbVoo_frameLayout.setVerticalGroup(
+            exbVoo_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exbVoo_frameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exbVoo_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(600, 400));
         setMinimumSize(new java.awt.Dimension(600, 400));
         setName("principal_frame"); // NOI18N
         setResizable(false);
@@ -2119,7 +2801,7 @@ public class App extends javax.swing.JFrame {
             .addGroup(InicioLayout.createSequentialGroup()
                 .addGap(175, 175, 175)
                 .addComponent(showIcon)
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
         InicioLayout.setVerticalGroup(
             InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2611,6 +3293,151 @@ public class App extends javax.swing.JFrame {
         );
 
         menuPanel.addTab("Deletar", Deletar);
+
+        exibirLabel.setText("Escolha a o que deseja exibir");
+
+        exibirAero_button.setText("Aeroporto");
+        exibirAero_button.setMaximumSize(new java.awt.Dimension(87, 35));
+        exibirAero_button.setMinimumSize(new java.awt.Dimension(87, 37));
+        exibirAero_button.setPreferredSize(new java.awt.Dimension(100, 35));
+        exibirAero_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirAero_buttonActionPerformed(evt);
+            }
+        });
+
+        exibirAvi_button.setText("Avião");
+        exibirAvi_button.setMaximumSize(new java.awt.Dimension(87, 32));
+        exibirAvi_button.setMinimumSize(new java.awt.Dimension(87, 32));
+        exibirAvi_button.setPreferredSize(new java.awt.Dimension(100, 35));
+        exibirAvi_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirAvi_buttonActionPerformed(evt);
+            }
+        });
+
+        exibirCid_button.setText("Cidade");
+        exibirCid_button.setMaximumSize(new java.awt.Dimension(87, 32));
+        exibirCid_button.setMinimumSize(new java.awt.Dimension(87, 32));
+        exibirCid_button.setPreferredSize(new java.awt.Dimension(100, 35));
+        exibirCid_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirCid_buttonActionPerformed(evt);
+            }
+        });
+
+        exibirCom_button.setText("Comissario");
+        exibirCom_button.setPreferredSize(new java.awt.Dimension(100, 35));
+        exibirCom_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirCom_buttonActionPerformed(evt);
+            }
+        });
+
+        exibirComp_button.setText("Companhia");
+        exibirComp_button.setPreferredSize(new java.awt.Dimension(100, 35));
+        exibirComp_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirComp_buttonActionPerformed(evt);
+            }
+        });
+
+        exibirFun_button.setText("Funcionário");
+        exibirFun_button.setPreferredSize(new java.awt.Dimension(100, 35));
+        exibirFun_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirFun_buttonActionPerformed(evt);
+            }
+        });
+
+        exibirPas_button.setText("Passageiro");
+        exibirPas_button.setPreferredSize(new java.awt.Dimension(100, 35));
+        exibirPas_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirPas_buttonActionPerformed(evt);
+            }
+        });
+
+        exibirPil_button.setText("Piloto");
+        exibirPil_button.setPreferredSize(new java.awt.Dimension(100, 35));
+        exibirPil_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirPil_buttonActionPerformed(evt);
+            }
+        });
+
+        exibirTre_button.setText("Trecho");
+        exibirTre_button.setPreferredSize(new java.awt.Dimension(100, 35));
+        exibirTre_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirTre_buttonActionPerformed(evt);
+            }
+        });
+
+        exibirVoo_button.setText("Voo");
+        exibirVoo_button.setPreferredSize(new java.awt.Dimension(100, 35));
+        exibirVoo_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirVoo_buttonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ExibirLayout = new javax.swing.GroupLayout(Exibir);
+        Exibir.setLayout(ExibirLayout);
+        ExibirLayout.setHorizontalGroup(
+            ExibirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ExibirLayout.createSequentialGroup()
+                .addContainerGap(280, Short.MAX_VALUE)
+                .addGroup(ExibirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(ExibirLayout.createSequentialGroup()
+                        .addGroup(ExibirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(exibirVoo_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(ExibirLayout.createSequentialGroup()
+                                .addGroup(ExibirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(exibirPas_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(exibirAero_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(exibirCom_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(ExibirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(exibirComp_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(exibirAvi_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(exibirPil_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ExibirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(exibirCid_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(exibirFun_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(exibirTre_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(ExibirLayout.createSequentialGroup()
+                        .addComponent(exibirLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        ExibirLayout.setVerticalGroup(
+            ExibirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ExibirLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exibirLabel)
+                .addGap(18, 18, 18)
+                .addGroup(ExibirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exibirCid_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exibirAvi_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exibirAero_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(ExibirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exibirCom_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exibirComp_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exibirFun_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(ExibirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exibirPas_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exibirPil_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exibirTre_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(exibirVoo_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
+        );
+
+        menuPanel.addTab("Exibir", Exibir);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -3277,6 +4104,174 @@ public class App extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_delVoo_buttonActionPerformed
 
+    private void exibirAero_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirAero_buttonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) exbAero_table.getModel();
+
+        while (model.getRowCount() != 0) {
+            model.removeRow(0);
+        }
+        AeroportoDao auxDao = DaoFactory.createAeroportoDao();
+        List<Aeroporto> list = auxDao.findAll();
+
+        for (Aeroporto obj : list) {
+            model.addRow(new Object[]{obj.getId(), obj.getNomeCidade()});
+        }
+        exbAero_frame.setVisible(true);
+    }//GEN-LAST:event_exibirAero_buttonActionPerformed
+
+    private void exibirAvi_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirAvi_buttonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) exbAviao_table.getModel();
+
+        while (model.getRowCount() != 0) {
+            model.removeRow(0);
+        }
+
+        AviaoDao aviaoDao = DaoFactory.createAviaoDao();
+        List<Aviao> list = aviaoDao.findAll();
+
+        for (Aviao obj : list) {
+            model.addRow(new Object[]{obj.getIdAviao(), obj.getTipoAviao(), obj.getNumeroAssentos(), obj.getNumeroVoo().getNumero()});
+        }
+
+        exbAviao_frame.setVisible(true);
+    }//GEN-LAST:event_exibirAvi_buttonActionPerformed
+
+    private void exibirCid_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirCid_buttonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) exbCidade_table.getModel();
+
+        while (model.getRowCount() != 0) {
+            model.removeRow(0);
+        }
+
+        CidadeDao cidadeDao = DaoFactory.createCidadeDao();
+        List<Cidade> list = cidadeDao.findAll();
+
+        for (Cidade obj : list) {
+            model.addRow(new Object[]{obj.getIdCidade(), obj.getNomeCidade(), obj.getPais()});
+        }
+
+        exbCidade_frame.setVisible(true);
+    }//GEN-LAST:event_exibirCid_buttonActionPerformed
+
+    private void exibirCom_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirCom_buttonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) exbComissario_table.getModel();
+
+        while (model.getRowCount() != 0) {
+            model.removeRow(0);
+        }
+
+        ComissarioDao comissarioDao = DaoFactory.createComissarioDao();
+        List<Comissario> list = comissarioDao.findAll();
+
+        for (Comissario obj : list) {
+            model.addRow(new Object[]{obj.getIdComissario(), obj.getIdFuncionario(), obj.getpNome(), obj.getmNome(), obj.getsNome(), obj.getDocumento(), obj.getIdioma(), obj.getSexo(), obj.getTipo(), obj.getCompanhia().getIdCompanhia()});
+        }
+
+        exbComissario_frame.setVisible(true);
+    }//GEN-LAST:event_exibirCom_buttonActionPerformed
+
+    private void exibirComp_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirComp_buttonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) exbCompanhiaAerea_table.getModel();
+
+        while (model.getRowCount() != 0) {
+            model.removeRow(0);
+        }
+
+        CompanhiaAereaDao companhiaAereaDao = DaoFactory.createCompanhiaAereaDao();
+        List<CompanhiaAerea> list = companhiaAereaDao.findAll();
+
+        for (CompanhiaAerea obj : list) {
+            model.addRow(new Object[]{obj.getIdCompanhia(), obj.getNomeCompanhia(), obj.getcNPJ(), obj.getTelefone(), obj.getEmail()});
+        }
+
+        exbCompanhiaAerea_frame.setVisible(true);
+    }//GEN-LAST:event_exibirComp_buttonActionPerformed
+
+    private void exibirFun_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirFun_buttonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) exbFunc_table.getModel();
+
+        while (model.getRowCount() != 0) {
+            model.removeRow(0);
+        }
+
+        FuncionarioDao funcionarioDao = DaoFactory.createFuncionarioDao();
+        List<Funcionario> list = funcionarioDao.findAll();
+
+        for (Funcionario obj : list) {
+            model.addRow(new Object[]{obj.getIdFuncionario(), obj.getpNome(), obj.getmNome(), obj.getsNome(), obj.getDocumento(), obj.getIdioma(), obj.getSexo(), obj.getTipo(), obj.getCompanhia().getIdCompanhia(), obj.getCompanhia().getNomeCompanhia()});
+        }
+
+        exbFunc_frame.setVisible(true);
+    }//GEN-LAST:event_exibirFun_buttonActionPerformed
+
+    private void exibirPas_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirPas_buttonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) exbPas_table.getModel();
+
+        while (model.getRowCount() != 0) {
+            model.removeRow(0);
+        }
+
+        PassageiroDao passageiroDao = DaoFactory.createPassageiroDao();
+        List<Passageiro> list = passageiroDao.findAll();
+
+        for (Passageiro obj : list) {
+            model.addRow(new Object[]{obj.getIdPassageiro(), obj.getpNome(), obj.getmNome(), obj.getsNome(), obj.getPassaporte(), obj.getIdade(), obj.getnVooPassageiro().getNumero()});
+        }
+
+        exbPas_frame.setVisible(true);
+    }//GEN-LAST:event_exibirPas_buttonActionPerformed
+
+    private void exibirPil_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirPil_buttonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) exbPiloto_table.getModel();
+
+        while (model.getRowCount() != 0) {
+            model.removeRow(0);
+        }
+
+        PilotoDao pilotoDao = DaoFactory.createPilotoDao();
+        List<Piloto> list = pilotoDao.findAll();
+
+        for (Piloto obj : list) {
+            model.addRow(new Object[]{obj.getIdPiloto(), obj.getHoras(), obj.getIdFuncionario(), obj.getpNome(), obj.getmNome(), obj.getsNome(), obj.getDocumento(), obj.getIdioma(), obj.getSexo(), obj.getTipo(), obj.getCompanhia().getIdCompanhia()});
+        }
+
+        exbPiloto_frame.setVisible(true);
+    }//GEN-LAST:event_exibirPil_buttonActionPerformed
+
+    private void exibirTre_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirTre_buttonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) exbTrecho_table.getModel();
+
+        while (model.getRowCount() != 0) {
+            model.removeRow(0);
+        }
+
+        TrechoDao trechoDao = DaoFactory.createTrechoDao();
+        List<Trecho> list = trechoDao.findAll();
+
+        for (Trecho obj : list) {
+            model.addRow(new Object[]{obj.getIdTrecho(), obj.getIdA(), obj.getIdP(), obj.getIdC(), obj.getnVoo(), obj.getIdAero()});
+        }
+
+        exbTrecho_frame.setVisible(true);
+    }//GEN-LAST:event_exibirTre_buttonActionPerformed
+
+    private void exibirVoo_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirVoo_buttonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) exbVoo_table.getModel();
+
+        while (model.getRowCount() != 0) {
+            model.removeRow(0);
+        }
+
+        VooDao vooDao = DaoFactory.createVooDao();
+        List<Voo> list = vooDao.findAll();
+
+        for (Voo obj : list) {
+            model.addRow(new Object[]{obj.getNumero()});
+        }
+
+        exbVoo_frame.setVisible(true);
+    }//GEN-LAST:event_exibirVoo_buttonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3329,9 +4324,9 @@ public class App extends javax.swing.JFrame {
 //		System.out.println(com);
 
         /* INSERE UM NOVO FUNCIONARIO NO BANCO
- * 
- * 		Funcionario newFuncionario = new Funcionario(699, "Alex", "F", "Marston", "123456789987", "M", "Comiss�rio", "Portugu�s", "01384130");
-				funcionarioDao.insert(newFuncionario);
+         * 
+         * 		Funcionario newFuncionario = new Funcionario(699, "Alex", "F", "Marston", "123456789987", "M", "Comiss�rio", "Portugu�s", "01384130");
+         funcionarioDao.insert(newFuncionario);
          */
 // TRAZ TODAS AS OCORRENCIAS DE PILOTO NO MYSQL
 //		List<Piloto> list = pilotoDao.findAll();
@@ -3339,9 +4334,14 @@ public class App extends javax.swing.JFrame {
 //			System.out.println(obj);
 //		}   
 // ENCONTRA UM FUNCIONARIO PELO ID PASSADO
-        Funcionario funcionario = funcionarioDao.findById(132);
-        System.out.println(funcionario.getIdioma());
-//		
+        //Funcionario funcionario = funcionarioDao.findById(132);
+        //System.out.println(funcionario.getIdioma());
+//	
+        List<Trecho> list = trechoDao.findAll();
+        for (Trecho obj : list) {
+            System.out.println(obj);
+        }
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 App app = new App();
@@ -3355,6 +4355,7 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JPanel Alterar;
     private javax.swing.JPanel Cadastrar;
     private javax.swing.JPanel Deletar;
+    private javax.swing.JPanel Exibir;
     private javax.swing.JPanel Inicio;
     private javax.swing.JLabel altAero;
     private javax.swing.JButton altAero_altButton;
@@ -3573,6 +4574,57 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JButton delVoo_button;
     private javax.swing.JTextField docTextFun;
     private javax.swing.JTextField emailTextComp;
+    private javax.swing.JPanel exbAero_Panel;
+    private javax.swing.JScrollPane exbAero_Scrool;
+    private javax.swing.JFrame exbAero_frame;
+    private javax.swing.JTable exbAero_table;
+    private javax.swing.JPanel exbAviao_Panel;
+    private javax.swing.JScrollPane exbAviao_Scrool;
+    private javax.swing.JFrame exbAviao_frame;
+    private javax.swing.JTable exbAviao_table;
+    private javax.swing.JPanel exbCidade_Panel;
+    private javax.swing.JScrollPane exbCidade_Scrool;
+    private javax.swing.JFrame exbCidade_frame;
+    private javax.swing.JTable exbCidade_table;
+    private javax.swing.JPanel exbComissario_Panel;
+    private javax.swing.JScrollPane exbComissario_Scrool;
+    private javax.swing.JFrame exbComissario_frame;
+    private javax.swing.JTable exbComissario_table;
+    private javax.swing.JPanel exbCompanhiaAerea_Panel;
+    private javax.swing.JScrollPane exbCompanhiaAerea_Scrool;
+    private javax.swing.JFrame exbCompanhiaAerea_frame;
+    private javax.swing.JTable exbCompanhiaAerea_table;
+    private javax.swing.JPanel exbFunc_Panel;
+    private javax.swing.JScrollPane exbFunc_Scrool;
+    private javax.swing.JFrame exbFunc_frame;
+    private javax.swing.JTable exbFunc_table;
+    private javax.swing.JPanel exbPas_Panel;
+    private javax.swing.JScrollPane exbPas_Scrool;
+    private javax.swing.JFrame exbPas_frame;
+    private javax.swing.JTable exbPas_table;
+    private javax.swing.JPanel exbPiloto_Panel;
+    private javax.swing.JScrollPane exbPiloto_Scrool;
+    private javax.swing.JFrame exbPiloto_frame;
+    private javax.swing.JTable exbPiloto_table;
+    private javax.swing.JPanel exbTrecho_Panel;
+    private javax.swing.JScrollPane exbTrecho_Scrool;
+    private javax.swing.JFrame exbTrecho_frame;
+    private javax.swing.JTable exbTrecho_table;
+    private javax.swing.JPanel exbVoo_Panel;
+    private javax.swing.JScrollPane exbVoo_Scrool;
+    private javax.swing.JFrame exbVoo_frame;
+    private javax.swing.JTable exbVoo_table;
+    private javax.swing.JButton exibirAero_button;
+    private javax.swing.JButton exibirAvi_button;
+    private javax.swing.JButton exibirCid_button;
+    private javax.swing.JButton exibirCom_button;
+    private javax.swing.JButton exibirComp_button;
+    private javax.swing.JButton exibirFun_button;
+    private javax.swing.JLabel exibirLabel;
+    private javax.swing.JButton exibirPas_button;
+    private javax.swing.JButton exibirPil_button;
+    private javax.swing.JButton exibirTre_button;
+    private javax.swing.JButton exibirVoo_button;
     private javax.swing.JTextField horasTextPil;
     private javax.swing.JTextField idATextTre;
     private javax.swing.JTextField idAeroTextTre;

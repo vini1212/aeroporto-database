@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/vinig/Desktop/Trabalho%20PBD/aeroporto-database-dao/aeroporto-database-master/connection_db/src/application/App.java</file>
+            <file>file:/C:/Users/vinig/Desktop/Trabalho%20PBD/aeroporto-database-dao/aeroporto-database-master/connection_db/src/model/dao/impl/PassageiroDaoJDBC.java</file>
+            <file>file:/C:/Users/vinig/Desktop/Trabalho%20PBD/aeroporto-database-dao/aeroporto-database-master/connection_db/src/model/entities/Aviao.java</file>
+            <file>file:/C:/Users/vinig/Desktop/Trabalho%20PBD/aeroporto-database-dao/aeroporto-database-master/connection_db/src/model/dao/impl/TrechoDaoJDBC.java</file>
+            <file>file:/C:/Users/vinig/Desktop/Trabalho%20PBD/aeroporto-database-dao/aeroporto-database-master/connection_db/src/model/dao/impl/AviaoDaoJDBC.java</file>
+            <file>file:/C:/Users/vinig/Desktop/Trabalho%20PBD/aeroporto-database-dao/aeroporto-database-master/connection_db/src/model/dao/impl/VooDaoJDBC.java</file>
+            <file>file:/C:/Users/vinig/Desktop/Trabalho%20PBD/aeroporto-database-dao/aeroporto-database-master/connection_db/src/model/entities/Trecho.java</file>
+            <file>file:/C:/Users/vinig/Desktop/Trabalho%20PBD/aeroporto-database-dao/aeroporto-database-master/connection_db/src/model/dao/impl/FuncionarioDaoJDBC.java</file>
+        </group>
     </open-files>
 </project-private>

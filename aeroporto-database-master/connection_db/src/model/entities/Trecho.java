@@ -130,7 +130,7 @@ public class Trecho implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Trecho ID: " + idTrecho + " - Numero do Voo:" + nVoo + " -  ID Aviao: " + idA + " - ID Passageiro: " + idP + " - ID Comissario:" + idC
+		return "Trecho ID: " + idTrecho + " - Numero do Voo:" + nVoo + " -  ID Aviao: " + idA + " - ID Piloto: " + idP + " - ID Comissario:" + idC
 				+ " - ID Aeroporto:" + idAero;
 	}
 }
